@@ -18,16 +18,18 @@ string add(string a, string b){
 
   string sol = "";
   int carry = 0;
+  int aindex = a.size()-1;
+  int bindex = b.size()-1;
 
-  while ( a.size() > 0 || b.size() > 0 || carry != 0){
+  while ( aindex >= 0 || bindex >= 0 || carry != 0){
 
-    if (a.size() > 0) {
-      carry+= (a[a.size()-1] - '0');
-      a.erase(a.size()-1);
+    if (aindex > 0) {
+      carry+= (a[aindex] - '0');
+      aindex--;
     }
-    if (b.size() > 0) {
-      carry+= (b[b.size()-1] - '0');
-      b.erase(b.size()-1);
+    if (bindex > 0) {
+      carry+= (b[bindex] - '0');
+      bindex--;
     }
 
     sol.insert(sol.begin(),'0' + (carry%10));
