@@ -21,14 +21,14 @@ int res(int a){
 int main(){
 
   int n;
-  int elem[5] = {1, 5, 10, 25, 50};
+  int coins[5] = {1, 5, 10, 25, 50};
   table[0] = 1;
 
   for(int i = 1; i < MAX; i++) table[i] = 0;
 
   for(int j = 0; j < 5; j++){
     for (int i = 1; i < MAX; i++){
-      table[i] += res(i-elem[j]);
+      table[i] += res(i-coins[j]);
     }
   }
 
