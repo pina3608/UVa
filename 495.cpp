@@ -60,9 +60,10 @@ int main(){
   sol[1] = "1";
 
   while (cin >> n){
-
     cout << "The Fibonacci number for " << n << " is " << fib(n) << endl;
-
   }
+
+  return 0;
+
 
 }
