@@ -23,11 +23,11 @@ string add(string a, string b){
 
   while ( aindex >= 0 || bindex >= 0 || carry != 0){
 
-    if (aindex > 0) {
+    if (aindex >= 0) {
       carry+= (a[aindex] - '0');
       aindex--;
     }
-    if (bindex > 0) {
+    if (bindex >= 0) {
       carry+= (b[bindex] - '0');
       bindex--;
     }
