@@ -20,22 +20,22 @@ typedef pair<int,int> pii;
 pii table[100][100];
 int M, N;
 
-pii set_find(pii x){
+pii setFind(pii x){
 
   if ( x == table[x.fs][x.sc] ) return x;
-  pii root = set_find (table[x.fs][x.sc]);
+  pii root = setFind (table[x.fs][x.sc]);
   table[x.fs][x.sc] = root;
   return root;
 
 
 }
 
-void set_union(int x1, int y1, int x2, int y2){
+void setUnion(int x1, int y1, int x2, int y2){
 
   if (x2 < 0 || y2 < 0 || x2 >= M || y2 >= N
       || table[x2][y2] == mp(-1,-1) ) return;
 
-  pii aux = set_find(mp(x2,y2));
+  pii aux = setFind(mp(x2,y2));
 
   table[aux.fs][aux.sc] = mp(x1,y1);
 
@@ -55,10 +55,10 @@ int main(){
         cin >> aux;
         if( aux == '@') {
           table[i][j] = mp(i,j);
-          set_union(i, j, i-1, j);
-          set_union(i, j, i-1, j-1);
-          set_union(i, j, i-1, j+1);
-          set_union(i, j, i, j-1);
+          setUnion(i, j, i-1, j);
+          setUnion(i, j, i-1, j-1);
+          setUnion(i, j, i-1, j+1);
+          setUnion(i, j, i, j-1);
         }
         else table[i][j] = mp(-1,-1);
 

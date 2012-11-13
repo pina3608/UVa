@@ -14,14 +14,14 @@ int main(){
 
   int n;
   cin >> n;
-  int correct_seq[n];
-  int new_seq[n];
+  int correctSeq[n];
+  int newSeq[n];
   int score[n];
   int new_event;
 
   fi(n) {
     cin >> new_event;
-    correct_seq[new_event-1] = i;
+    correctSeq[new_event-1] = i;
   }
   fi(n) score[i] = 0;
 
@@ -29,26 +29,26 @@ int main(){
 
   while (cin >> new_event){
 
-    new_seq[new_event-1] = times;
+    newSeq[new_event-1] = times;
     times++;
 
     if (times == n){
 
-      int total_max = 0;
+      int totalMax = 0;
       fi(n){
         int j = 0;
-        int max_score = 0;
-        while (correct_seq[j] != new_seq[i]){
-          max_score = max(score[correct_seq[j]], max_score);
+        int maxScore = 0;
+        while (correctSeq[j] != newSeq[i]){
+          maxScore = max(score[correctSeq[j]], maxScore);
           j++;
         }
-        score[new_seq[i]] = max_score + 1;
-        total_max = max(total_max, max_score+1);
+        score[newSeq[i]] = maxScore + 1;
+        totalMax = max(totalMax, maxScore+1);
       }
 
       fi(n) score[i] = 0;
 
-      cout << total_max << endl;
+      cout << totalMax << endl;
       times = 0;
     }
 

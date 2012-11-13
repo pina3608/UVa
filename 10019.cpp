@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int count_ones(int d){
+int countOnes(int d){
 
   int count = 0;
 
@@ -31,12 +31,12 @@ int main(){
     int d;
     cin >> d;
 
-    cout << count_ones(d);
+    cout << countOnes(d);
 
     int count = 0;
     while (d > 0){
       int last = d%10;
-      count += count_ones(last);
+      count += countOnes(last);
       d /= 10;
     }
 
