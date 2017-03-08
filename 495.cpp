@@ -1,6 +1,6 @@
 /*
  *
- * @author Santiago Pina (santiago.pina1@gmail.com)
+ * @author Santiago Pina
  *
  */
 
